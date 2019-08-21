@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             task.execute("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty");
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
         ListView listView = findViewById(R.id.listView);
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, titles);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
